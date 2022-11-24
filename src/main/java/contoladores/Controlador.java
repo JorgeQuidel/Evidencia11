@@ -4,11 +4,11 @@ import datos.DatosTrabajador;
 import modelo.Trabajador;
 
 public class Controlador {
-    public void agregarTrabajador(String nombre, String appelido, String rut, String isapre, String afp){
+    public void agregarTrabajador(String nombre, String apelido, String rut, String isapre, String afp){
         DatosTrabajador dao = new DatosTrabajador();
         Trabajador trabajador = new Trabajador();
         trabajador.setNombre(nombre);
-        trabajador.setApellido(appelido);
+        trabajador.setApellido(apelido);
         trabajador.setRut(rut);
         trabajador.setIsapre(isapre);
         trabajador.setAFP(afp);

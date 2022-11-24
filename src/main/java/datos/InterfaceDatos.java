@@ -1,6 +1,6 @@
 package datos;
 
 public interface InterfaceDatos {
-    String leerContenidosJSON(String ruta);
-    void escribirArchivoJSON(String ruta, String contenido);
+    String leerContenidos(String ruta);
+    void escribirArchivo(String ruta, String contenido);
 }

@@ -51,11 +51,7 @@ public class DatosTrabajador implements InterfaceDatos {
         if(trabajadores.size() == 0){
             return new String[0][5];
         }
-        String[][] arregloTrabajadores = new String[trabajadores.size()][5];
-        for (int i = 0; i < trabajadores.size(); i++) {
-            arregloTrabajadores[i] = trabajadores.get(i).obtenerAtributos();
-        }
-        return arregloTrabajadores;
+        return trabajadores.stream().map(Trabajador::obtenerAtributos).toArray(String[][]::new);
     }
 
     public void crearTrabajador(Trabajador trabajador) {;
@@ -65,7 +61,7 @@ public class DatosTrabajador implements InterfaceDatos {
     }
 
     public void escribirTrabajadores(List<Trabajador> trabajadores) {
-        escribirArchivoJSON(RUTA_TRABAJADORES, convertirListaDeTrabajadoresAJSONArray(trabajadores).toJSONString());
+        escribirArchivo(RUTA_TRABAJADORES, convertirListaDeTrabajadoresAJSONArray(trabajadores).toJSONString());
     }
 
     private JSONArray convertirListaDeTrabajadoresAJSONArray(List<Trabajador> trabajadores) {
@@ -88,7 +84,7 @@ public class DatosTrabajador implements InterfaceDatos {
 
     public JSONArray parsearArchivoJSON(String ruta) throws AccesoADatosInterrumpidoException {
         try {
-            String contenidosJSON = leerContenidosJSON(ruta);
+            String contenidosJSON = leerContenidos(ruta);
             JSONParser parser = new JSONParser();
             return (JSONArray) parser.parse(contenidosJSON);
         } catch (ParseException e) {
@@ -96,7 +92,7 @@ public class DatosTrabajador implements InterfaceDatos {
         }
     }
 
-    public String leerContenidosJSON(String ruta) {
+    public String leerContenidos(String ruta) {
         try{
             StringBuilder st = new StringBuilder();
             File archivoJSON = new File(ruta);
@@ -111,7 +107,7 @@ public class DatosTrabajador implements InterfaceDatos {
         }
     }
 
-    public void escribirArchivoJSON(String ruta, String contenido) {
+    public void escribirArchivo(String ruta, String contenido) {
         try {
             FileWriter myWriter = new FileWriter(ruta);
             myWriter.write(contenido);

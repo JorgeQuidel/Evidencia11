@@ -1,8 +1,10 @@
 package launcher;
 
+import ventanas.GuiTrabajador;
+
 public class AppLauncher {
 
-	public void main() {
-		throw new UnsupportedOperationException();
+	public static void main(String[] args) {
+		new GuiTrabajador();
 	}
 }

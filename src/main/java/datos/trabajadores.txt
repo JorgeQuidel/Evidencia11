@@ -1,0 +1,1 @@
+[{"Nombre":"Jorge","Rut":"123456789","Isapre":"Isapre","Apellido":"Quidel","AFP":"AFP"},{"Nombre":"Matias","Rut":"987654321","Isapre":"Fonasa","Apellido":"Vidal","AFP":"AFP"}]

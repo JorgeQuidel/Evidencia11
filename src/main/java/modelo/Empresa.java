@@ -4,5 +4,11 @@ import java.util.ArrayList;
 import modelo.Trabajador;
 
 public class Empresa {
-	private ArrayList<Trabajador> trabajadores = new ArrayList<Trabajador>();
+	private ArrayList<Trabajador> trabajadores;
+
+	public Empresa() {
+		this.trabajadores = new ArrayList<>();
+	}
+
+
 }

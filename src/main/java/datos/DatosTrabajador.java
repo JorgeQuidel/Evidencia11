@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class DatosTrabajador implements InterfaceDatos {
-    private final String RUTA_TRABAJADORES = "src/main/java/datos/trabajadores.txt";
+    private final String RUTA_TRABAJADORES = "src/main/java/datos/trabajadores.json";
 
     private JSONArray parsearTrabajadores() throws AccesoADatosInterrumpidoException {
         return parsearArchivoJSON(RUTA_TRABAJADORES);

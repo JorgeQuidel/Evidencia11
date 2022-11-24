@@ -8,7 +8,6 @@ public abstract class Ventana extends JFrame {
     public Ventana() {
         this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
         this.setResizable(false);
     }
 

@@ -27,6 +27,7 @@ public class GuiTrabajador extends Ventana implements ActionListener {
 		crearCamposDeTexto();
 		crearTabla();
 		crearBotones();
+		this.setVisible(true);
 	}
 
 	private void crearMarco(){
